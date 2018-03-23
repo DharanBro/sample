@@ -46,8 +46,13 @@
 			new agGrid.Grid(eGridDiv, gridOptions);
 		});
 		
-		function snapIt(){
+		function completeSnap(){
 			html2canvas(document.body).then(function(canvas) {
+				document.body.appendChild(canvas);
+			});
+		}
+		function tableSnap(){
+			html2canvas(document.getElementById("myGrid")).then(function(canvas) {
 				document.body.appendChild(canvas);
 			});
 		}
@@ -60,7 +65,8 @@
 <!-- the div ag-Grid will use to render it's data -->
 <div id="myGrid" style="height: 115px;width:500px" class="ag-theme-fresh"></div>
 
-<button onclick="snapIt()">Snap IT</button>
+<button onclick="completeSnap()">Snap IT</button>
+<button onclick="tableSnap()">Table IT</button>
 
 </body>
 </html>
