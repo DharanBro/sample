@@ -47,6 +47,7 @@
 		});
 		
 		function completeSnap(){
+			document.getElementById("myGrid").style.overflow = 'hidden';
 			html2canvas(document.body).then(function(canvas) {
 				document.body.appendChild(canvas);
 			});
